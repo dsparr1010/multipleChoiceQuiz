@@ -10,31 +10,33 @@
 </head>
 <body>
     <div id="container">
-        <div id = "quiz-info">Click "Start" to start the quiz. You will have 15 seconds per question to 
+        <div class="text-center" id = "quiz-info">Click "Start" to start the quiz. You will have 15 seconds per question to 
             select an answer. If the answer is incorrect, 5 seconds will be deducted from your time.
-            <button id="start">Start Quiz!</button></div>
+            <button class="row col-3 text-center btn btn-primary" id="start">Start Quiz!</button></div>
         <div id="quiz" style="display: none">
             <div id="show-questions"></div>
                 <div class="form-check">
-                    <div class="choice" id="A"onclick ="checkAnswer('A')" ></div>
+                    <div class="choice btn btn-primary" id="A"onclick ="checkAnswer('A')" ></div>
                     <div class = "col"></div>
-                    <div class="choice" id="B"onclick ="checkAnswer('B')"></div>
+                    <div class="choice btn btn-primary" id="B"onclick ="checkAnswer('B')"></div>
                     <div class = "col"></div>
-                    <div class="choice" id="C" onclick ="checkAnswer('C')" ></div>
+                    <div class="choice btn btn-primary" id="C" onclick ="checkAnswer('C')" ></div>
                     <div class = "col"></div>
-                    <div class="choice" id="D" onclick ="checkAnswer('D')"></div>
+                    <div class="choice btn btn-primary" id="D" onclick ="checkAnswer('D')"></div>
                 </div>
-            </div>
-            <div id="timer">
+
                 <div id="counter"></div>
                 <div id="timeGauge"></div>
-            </div>
+        </div>
+
+        <div id="scoreContainer" style="display: none"></div>
+        <div id="header">    
             <div class = "userInput">
-                <div id = "initialBox"></div>
+                <input class = "" id = "initialBox" type = "text" placeholder = "Enter initials to keep score" style = "display : none"></input>
+                <button class = "row col-2 text-center btn btn-primary" id ="initialBtn" value = "submit" style = "display : none">Submit</button>
             </div>
         </div>
-        <div id="scoreContainer" style="display: none"></div>
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 

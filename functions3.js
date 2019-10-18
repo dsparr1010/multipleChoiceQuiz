@@ -10,7 +10,9 @@ var counter = document.getElementById("counter");
 var timeGauge = document.getElementById("timeGauge");
 var scoreDiv = document.getElementById("scoreContainer");
 var quizInfo = document.getElementById("quiz-info");
-var finalInputs = document.getElementById("initialBox");
+var initialBox = document.getElementById("initialBox");
+var initialBtn = document.getElementById("initialBtn");
+var header = document.getElementById("header");
 
 // create our questions
 var questions = [
@@ -108,6 +110,7 @@ function showQuestion() {
 
 //on click event to start questions, start timer, keep score, show input box
 start.addEventListener("click", startQuiz);
+initialBtn.addEventListener("click", saveHighScore);
 
 //start the quiz
 function startQuiz() {
@@ -149,27 +152,45 @@ function timer() {
     }, 1000);
 }
 
-function storeScore(event) {
-    event.preventDefault();
-    var user = {
-      name: nameInput.value,
-      savedScore: score
-    };
-    localStorage.setItem("storage", score /*JSON.stingify(user)*/);
-  }
+
 
 function finalScore() {
-
-    //appending element and content to page
-    var header = document.createElement("h2"); 
-    var headerContent = document.createTextNode("All done!"); 
-    header.appendChild(headerContent);   
-    body.insertBefore(header, header.firstChild);
-
     timeGauge.style.display = "none"
     quiz.style.display = "none";
     scoreDiv.style.display = "block";
-    scoreDiv.innerHTML = "Your score is :" + score +"!";
-}
+    scoreDiv.innerHTML = "Your score is : " + score +"!";
 
-//show input box for initials on end of timer || end of quiz
+    initialBox.style.display = "block";
+    initialBtn.style.display = "block";
+
+    localStorage.setItem("score", score);
+
+   // for (ii=0; ii<=localStorage.length; ii++) {
+    //  localStorage.setItem("score", JSON.stringify(scores[ii].score))
+  };
+
+//can't get localStorage to work
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+function saveHighScore (e) {
+  console.log("clicked the save button!");
+  e.preventDefault();
+
+  score = {
+    scores: score,
+    name: initialBox.value
+  };
+  highScores.push(score);
+
+
+
+  for (x = 0; x < highScores.length; x++) {
+    console.log(score)
+    console.log(highScores[x].scores);
+    console.log(highScores[x].name);
+};
+
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+
+
+};
