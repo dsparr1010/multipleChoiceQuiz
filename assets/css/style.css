@@ -1,0 +1,28 @@
+.skyrim-wallpaper {
+    background-image:
+  url(https://images.alphacoders.com/186/thumb-350-186993.jpg); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 100%;
+  width: 100%; /* You must set a specified height */
+  position: fixed; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  opacity: 0.3;
+  z-index: -1;
+  top 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+body {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+#start {
+    display:block;
+    justify-content: center;
+    margin-left: 4%;
+    margin-top : 2%;
+}
