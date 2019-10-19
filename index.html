@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+   <!-- <link rel="stylesheet" href="style.css">-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "assets/css/style.css">
+</head>
+<body>
+    <div class = "skyrim-wallpaper"></div>
+    <nav class="navbar navbar-light bg-dark">
+            <button class="navbar-brand"  value = "refresh page" onClick="window.location.reload()">
+                <img src="https://1000logos.net/wp-content/uploads/2017/08/Skyrim-Logo-768x768.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                Arrow to the knee? Click to retry!
+            </button>
+            <button id = "showHighBtn" class="nav justify-content-end nav-item" onClick="showHigh()">
+                    <img src="https://1000logos.net/wp-content/uploads/2017/08/Skyrim-Logo-768x768.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Use your thu'um and check out the high scores!
+            </button>
+            </nav>
+    <div id="container ">
+            <div class = "skyrim-wallpaper"></div>
+        <div class="text-center" id = "quiz-info">Click "Start" to start the quiz. You will have 15 seconds per question to 
+            select an answer. If the answer is incorrect, 5 seconds will be deducted from your time.
+            <button class="row col-3 btn btn-primary" id="start">Start Quiz!</button></div>
+        <div id="quiz" style="display: none">
+            <div id="show-questions"></div>
+                <div class="form-check">
+                    <div class="choice btn btn-primary" id="A"onclick ="checkAnswer('A')" ></div>
+                    <div class = "col"></div>
+                    <div class="choice btn btn-primary" id="B"onclick ="checkAnswer('B')"></div>
+                    <div class = "col"></div>
+                    <div class="choice btn btn-primary" id="C" onclick ="checkAnswer('C')" ></div>
+                    <div class = "col"></div>
+                    <div class="choice btn btn-primary" id="D" onclick ="checkAnswer('D')"></div>
+                </div>
+
+                <div id="counter"></div>
+                <div id="timeGauge"></div>
+        </div>
+
+        <div id="scoreContainer" style="display: none"></div>
+        <div id="header">    
+            <div class = "userInput">
+                <input class = "" id = "initialBox" type = "text" placeholder = "Enter initials" style = "display : none"></input>
+                <button class = "row col-2 text-center btn btn-primary" id ="initialBtn" value = "submit" style = "display : none">Submit</button>
+            </div>
+            <ul class = "text-center" id = "displayHigh"></ul>
+        </div>
+
+</body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src ="assets/app/questions.js"></script>
+<script src="assets/app/functions3.js"></script>
+
+</html>
